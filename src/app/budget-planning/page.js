@@ -240,7 +240,7 @@ function BudgetPlanningContent() {
 
             <div className="grid lg:grid-cols-2 gap-6 items-start">
               {/* Left column: forms */}
-              <div className="space-y-6">
+              <div className="min-w-0 space-y-6">
                 <Card>
                   <CardHeader>
                     <CardTitle>Set Total Budget</CardTitle>
@@ -310,7 +310,7 @@ function BudgetPlanningContent() {
               </div>
 
               {/* Right column: progress + allocations */}
-              <div className="space-y-6">
+              <div className="min-w-0 space-y-6">
                 <Card>
                   <CardHeader>
                     <CardTitle>Progress</CardTitle>

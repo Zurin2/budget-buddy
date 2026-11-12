@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+/* Page-level guard: nothing may force horizontal panning on phones.
+   `clip` (not `hidden`) keeps position: sticky working. */
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
 /* Mobile burger-drawer animations */
 @keyframes drawer-in {
   from { transform: translateX(-100%); }

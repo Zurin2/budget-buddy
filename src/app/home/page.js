@@ -537,7 +537,7 @@ function HomeContent() {
 
             <div className="grid lg:grid-cols-2 gap-6 items-start">
               {/* Left column: forms + quick actions */}
-              <div className="space-y-6">
+              <div className="min-w-0 space-y-6">
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2"><Plus size={16} className="text-green-600" /> Add Funds</CardTitle>
@@ -661,7 +661,7 @@ function HomeContent() {
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2"><Zap size={16} className="text-amber-600" /> Quick Actions</CardTitle>
                   </CardHeader>
-                  <CardContent className="grid grid-cols-2 gap-2">
+                  <CardContent className="grid grid-cols-1 min-[420px]:grid-cols-2 gap-2">
                     {quickActions.map(({ key, icon: Icon, label, cls, onClick }) => (
                       <button
                         key={key}
@@ -677,7 +677,7 @@ function HomeContent() {
               </div>
 
               {/* Right column: categories + recent actions */}
-              <div className="space-y-6">
+              <div className="min-w-0 space-y-6">
                 <Card>
                   <CardHeader>
                     <CardTitle>Categories &amp; Balances</CardTitle>
