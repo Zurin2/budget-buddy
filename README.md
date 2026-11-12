@@ -2,7 +2,9 @@
 
 A personal finance tracker for the Philippines, rebuilt from the original Base44 app
 ("Budget Buddy / Budget Tracker") as **Next.js 16 + Supabase + server-side Gemini** —
-the same proven stack as riff note ai. Deployed on Vercel.
+the same proven stack as riff note ai.
+
+**Live:** https://budget-buddy-ph.vercel.app · **Repo:** https://github.com/Zurin2/budget-buddy
 
 Money is tracked **per category** in **two separate wallets** (`GCash` and
 `Cash on Hand`), never mixed. A budget plan sets totals per wallet and allocates
@@ -45,6 +47,14 @@ operations from natural language.
    Auto-Add on Home → subtract → undo → export PDF → ask Buddy
    "minus 200 from groceries and add 500 to savings".
 
+## Mobile
+
+Below 768px the sidebar becomes a fixed top bar with a burger button that opens
+a slide-in drawer (full nav + logout) over a dimmed backdrop; desktop keeps the
+collapsible rail. The page never scrolls horizontally: layout columns carry
+`min-w-0`, and `globals.css` enforces `overflow-x: clip` on `html, body`.
+Category names always render in full (`break-words`, no truncation).
+
 ## Verify locally
 
 ```bash
@@ -52,8 +62,14 @@ npm run lint
 npm run build
 ```
 
+## Changelog
+
+See `CHANGELOG.md` for dated release notes (deploy, chatbot brain fixes,
+mobile responsiveness rounds).
+
 ## Documentation
 
 Full architecture, data model and chatbot wiring live in the Obsidian vault:
-`40 - Projects → Web & Full-Stack Architecture → Budget Buddy — Rebuild Guide`.
+`40 - Projects → Budget Buddy → Budget Buddy — Budget Tracker (Next.js +
+Supabase Rebuild Guide)`.
 Keep that note updated whenever a page, entity, or chatbot action changes.

@@ -7,7 +7,9 @@ Supabase (auth, Postgres + RLS) + server-side Gemini chatbot. Deployed on Vercel
 
 - Dev: `npm run dev` (needs `.env.local`: NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY, GEMINI_API_KEY)
 - Verify: `npm run lint` then `npm run build` — both must pass before declaring work done
+- Deploy: `vercel --prod` (CLI-only until the GitHub integration is connected in the dashboard)
 - Schema: run `supabase/schema.sql` once per fresh Supabase project
+- Live URL `budget-buddy-ph.vercel.app` is a **project domain** — never re-alias it per deploy; it auto-follows production
 
 ## Layout
 
