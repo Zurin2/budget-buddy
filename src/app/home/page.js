@@ -669,7 +669,7 @@ function HomeContent() {
                         disabled={!!busy}
                         className={`flex items-center gap-2 rounded-lg border px-3 py-2.5 text-xs font-medium text-left transition-colors disabled:opacity-50 ${cls}`}
                       >
-                        <Icon size={14} className="shrink-0" /> {label}
+                        <Icon size={14} className="shrink-0" /> <span className="min-w-0 break-words">{label}</span>
                       </button>
                     ))}
                   </CardContent>

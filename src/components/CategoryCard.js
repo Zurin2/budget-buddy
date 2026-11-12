@@ -9,7 +9,7 @@ export default function CategoryCard({ name, gcash_balance = 0, cash_balance = 0
         {name.charAt(0).toUpperCase()}
       </div>
       <div className="min-w-0 flex-1">
-        <p className="font-semibold text-slate-900 truncate">{name}</p>
+        <p className="font-semibold text-slate-900 break-words">{name}</p>
         {subtitle ? <p className="text-xs text-slate-500">{subtitle}</p> : null}
         <div className="mt-1 flex flex-wrap gap-x-4 gap-y-0.5 text-sm">
           <span className="text-blue-600 font-medium">GCash: ₱{Number(gcash_balance).toFixed(2)}</span>
