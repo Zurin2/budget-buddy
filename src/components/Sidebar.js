@@ -11,21 +11,23 @@ const NAV_ITEMS = [
   { label: 'Guide', path: '/guide', icon: BookOpen },
 ];
 
-export default function Sidebar({ user, onLogout, collapsed, onToggle }) {
+// The nav column. Desktop: sticky collapsible rail. Mobile: rendered expanded
+// inside AppLayout's burger drawer (mobile=true, onNavigate closes the drawer).
+export default function Sidebar({ user, onLogout, collapsed, onToggle, mobile = false, onNavigate }) {
   const pathname = usePathname();
+  const isCollapsed = mobile ? false : collapsed;
 
   return (
     <aside
       className={`sticky top-0 h-screen bg-gradient-to-b from-blue-700 to-blue-900 text-white transition-all duration-300 flex flex-col ${
-        collapsed ? 'w-20' : 'w-64'
+        isCollapsed ? 'w-20' : 'w-64'
       }`}
     >
       {/* Brand */}
-      <div className={`flex items-center gap-3 px-4 py-5 ${collapsed ? 'justify-center' : ''}`}>
-        {/* Static 1KB SVG icon — no optimization needed, so <img> is intentional. */}
+      <div className={`flex items-center gap-3 px-4 py-5 ${isCollapsed ? 'justify-center' : ''}`}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/logo.svg" alt="Budget Buddy logo" className="h-8 w-8 shrink-0" />
-        {!collapsed && <span className="text-lg font-bold tracking-tight">Budget Buddy</span>}
+        {!isCollapsed && <span className="text-lg font-bold tracking-tight">Budget Buddy</span>}
       </div>
 
       {/* Nav */}
@@ -36,33 +38,36 @@ export default function Sidebar({ user, onLogout, collapsed, onToggle }) {
             <Link
               key={path}
               href={path}
-              title={collapsed ? label : undefined}
+              onClick={onNavigate}
+              title={isCollapsed ? label : undefined}
               className={`relative flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm transition-colors ${
                 active ? 'bg-white/15 font-semibold' : 'text-blue-100 hover:bg-white/10 hover:text-white'
-              } ${collapsed ? 'justify-center' : ''}`}
+              } ${isCollapsed ? 'justify-center' : ''}`}
             >
               {active && <span className="absolute left-0 top-1.5 bottom-1.5 w-1 rounded-full bg-white" />}
               <Icon size={18} className="shrink-0" />
-              {!collapsed && <span>{label}</span>}
+              {!isCollapsed && <span>{label}</span>}
             </Link>
           );
         })}
       </nav>
 
-      {/* Collapse toggle */}
-      <div className="px-2 pb-2">
-        <button
-          onClick={onToggle}
-          className="flex items-center gap-2 w-full rounded-lg px-3 py-2 text-sm text-blue-100 hover:bg-white/10 hover:text-white transition-colors"
-          title={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
-        >
-          {collapsed ? <ChevronsRight size={18} className="mx-auto" /> : <><ChevronsLeft size={18} /><span>Collapse</span></>}
-        </button>
-      </div>
+      {/* Collapse toggle (desktop only) */}
+      {!mobile && (
+        <div className="px-2 pb-2">
+          <button
+            onClick={onToggle}
+            className="flex items-center gap-2 w-full rounded-lg px-3 py-2 text-sm text-blue-100 hover:bg-white/10 hover:text-white transition-colors"
+            title={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+          >
+            {collapsed ? <ChevronsRight size={18} className="mx-auto" /> : <><ChevronsLeft size={18} /><span>Collapse</span></>}
+          </button>
+        </div>
+      )}
 
       {/* Account footer */}
       <div className="border-t border-white/15 p-3">
-        {collapsed ? (
+        {isCollapsed ? (
           <div className="relative group flex justify-center">
             <button
               className="w-9 h-9 rounded-full bg-white/20 grid place-items-center text-sm font-bold hover:bg-white/30 transition-colors"

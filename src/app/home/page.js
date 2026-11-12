@@ -614,7 +614,7 @@ function HomeContent() {
                     <CardTitle className="flex items-center gap-2"><ArrowLeftRight size={16} className="text-blue-600" /> Transfer Funds</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-3">
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <div>
                         <Label>From category</Label>
                         <Select value={transferForm.fromCategory} onChange={(e) => setTransferForm((f) => ({ ...f, fromCategory: e.target.value }))}>
@@ -641,7 +641,7 @@ function HomeContent() {
                         placeholder="e.g. 300"
                       />
                     </div>
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <div>
                         <Label>From wallet</Label>
                         <CashTypeRadio value={transferForm.fromCashType} onChange={(v) => setTransferForm((f) => ({ ...f, fromCashType: v }))} />
