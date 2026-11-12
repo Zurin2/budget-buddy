@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+/* Budget Buddy styles everything with literal Tailwind utility classes
+   (bg-slate-50, text-slate-900, bg-blue-600, ...) so no design tokens are
+   needed beyond the stock Tailwind v4 set. */

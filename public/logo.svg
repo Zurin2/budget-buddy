@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" fill="none">
+  <defs>
+    <!-- GCash Blue to Cash Emerald Gradient -->
+    <linearGradient id="budgetBuddyGrad" x1="36" y1="24" x2="216" y2="232" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1D4ED8" />
+      <stop offset="50%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#10B981" />
+    </linearGradient>
+
+    <!-- Subtle inner shading for depth -->
+    <linearGradient id="bowlDepthGrad" x1="90" y1="24" x2="216" y2="232" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1E40AF" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#047857" stop-opacity="0.22" />
+    </linearGradient>
+  </defs>
+
+  <!-- Main Outer B & Double Peso Bars (Left Stem) -->
+  <path d="M 60 28
+       H 148
+       C 186 28, 206 48, 206 78
+       C 206 100, 194 114, 176 122
+       C 198 130, 212 146, 212 172
+       C 212 206, 188 228, 148 228
+       H 60
+       V 146
+       H 42
+       V 134
+       H 60
+       V 122
+       H 42
+       V 110
+       H 60
+       Z" fill="url(#budgetBuddyGrad)" />
+
+  <!-- Top Counter Cutout (Upper Wallet) -->
+  <path d="M 94 58
+       H 144
+       C 162 58, 172 66, 172 82
+       C 172 98, 162 106, 144 106
+       H 94
+       Z" fill="#FFFFFF" />
+
+  <!-- Bottom Counter Cutout (Lower Wallet) -->
+  <path d="M 94 146
+       H 148
+       C 168 146, 178 156, 178 172
+       C 178 188, 168 198, 148 198
+       H 94
+       Z" fill="#FFFFFF" />
+
+  <!-- Center Peso Split Bar Cutout -->
+  <rect x="94" y="122" width="68" height="8" rx="2" fill="#FFFFFF" />
+
+  <!-- Top Wallet Clasp Tab -->
+  <path d="M 174 73
+       H 144
+       C 138 73, 134 77, 134 82
+       C 134 87, 138 91, 144 91
+       H 174
+       Z" fill="url(#budgetBuddyGrad)" />
+  <circle cx="144" cy="82" r="3.5" fill="#FFFFFF" />
+
+  <!-- Bottom Wallet Clasp Tab -->
+  <path d="M 180 163
+       H 146
+       C 140 163, 136 167, 136 172
+       C 136 177, 140 181, 146 181
+       H 180
+       Z" fill="url(#budgetBuddyGrad)" />
+  <circle cx="146" cy="172" r="3.5" fill="#FFFFFF" />
+</svg>
