@@ -5,9 +5,6 @@ export default function CategoryCard({ name, gcash_balance = 0, cash_balance = 0
   const total = Number(gcash_balance) + Number(cash_balance);
   return (
     <div className="rounded-xl bg-white border border-slate-200 shadow-sm p-4 flex items-center gap-4">
-      <div className="w-10 h-10 rounded-full bg-blue-50 text-blue-700 grid place-items-center shrink-0 font-bold text-sm">
-        {name.charAt(0).toUpperCase()}
-      </div>
       <div className="min-w-0 flex-1">
         <p className="font-semibold text-slate-900 break-words">{name}</p>
         {subtitle ? <p className="text-xs text-slate-500">{subtitle}</p> : null}
